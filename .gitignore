@@ -1,0 +1,113 @@
+# ==========================================
+# Root .gitignore for Full-Stack Application
+# ==========================================
+
+# ------------------------------------------
+# Environment & Secrets (CRITICAL SECURITY)
+# ------------------------------------------
+*.env
+*.env.*
+*.env.local
+.env
+.env.*
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Allow safe example templates to be committed
+!*.env.example
+!*.env.local.example
+!backend/.env.example
+!frontend/.env.local.example
+
+# Keys & Certificates
+*.pem
+*.key
+*.cert
+*.crt
+
+# ------------------------------------------
+# Python & Backend Artifacts
+# ------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+backend/__pycache__/
+backend/*/__pycache__/
+
+# Python Virtual Environments
+venv/
+.venv/
+env/
+ENV/
+backend/venv/
+backend/.venv/
+backend/env/
+env.bak/
+venv.bak/
+
+# Python Distribution & Packaging
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ------------------------------------------
+# Node.js & Next.js Frontend
+# ------------------------------------------
+node_modules/
+frontend/node_modules/
+.pnp
+.pnp.js
+.yarn/cache
+.yarn/unplugged
+
+# Next.js Build Output
+.next/
+frontend/.next/
+out/
+frontend/out/
+
+# Vercel
+.vercel/
+
+# TypeScript Build Info
+*.tsbuildinfo
+next-env.d.ts
+
+# Debug Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# ------------------------------------------
+# Operating System & IDE Files
+# ------------------------------------------
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
