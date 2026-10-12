@@ -5,3 +5,4 @@ supabase==2.4.6
 PyJWT==2.8.0
 cryptography==42.0.7
 requests==2.32.3
+gunicorn==22.0.0

@@ -31,10 +31,16 @@ def create_app():
     app = Flask(__name__)
     app.config.from_object(Config)
 
+    # Configure allowed CORS origins (handles comma-separated domains and strips trailing slashes)
+    frontend_origins = [url.strip().rstrip("/") for url in Config.FRONTEND_URL.split(",") if url.strip()]
+    for default_origin in ["http://localhost:3000", "http://127.0.0.1:3000"]:
+        if default_origin not in frontend_origins:
+            frontend_origins.append(default_origin)
+
     # Enable CORS for Next.js frontend
     CORS(
         app,
-        resources={r"/api/*": {"origins": [Config.FRONTEND_URL, "http://localhost:3000"]}},
+        resources={r"/api/*": {"origins": frontend_origins}},
         supports_credentials=True,
         allow_headers=["Content-Type", "Authorization"],
         methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
